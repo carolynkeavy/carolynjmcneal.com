@@ -19,7 +19,7 @@
         keyframes = [
           {
             'wrapper' : '#intro',
-            'duration' : '100%',
+            'duration' : '50%',
             'animations' :  [
               {
                 'selector'    : '.name',
@@ -36,7 +36,7 @@
             ]
           } , {
             'wrapper' : '.explosion',
-            'duration' : '100%',
+            'duration' : '250%',
             'animations' :  [
               {
                 'selector'    : '.explosion-byline',
@@ -44,7 +44,7 @@
                 'opacity'     : [0, 1.75] // hack to accelrate opacity speed
               } , {
                 'selector'    : '.domExplosionList',
-                'translateY'  : '-50%',//-70
+                'translateY'  : '-90%',//-70
                 'opacity'     : [0, 1] // hack to accelrate opacity speed
               }
             ]
@@ -58,7 +58,7 @@
                 'opacity'     : [0, 1.75] // hack to accelrate opacity speed
               } , {
                 'selector'    : '.domExplosionList2',
-                'translateY'  : '-85%',//'-70%',
+                'translateY'  : '-95%',//'-70%',
                 'opacity'     : [0, 1] // hack to accelrate opacity speed
               }
             ]
@@ -368,7 +368,7 @@ function toggleFunction() {
 //Auto scroll functions
 function pageScroll() {
     window.scrollBy(0,1);
-    scrolldelay = setTimeout(pageScroll,15);
+    scrolldelay = setTimeout(pageScroll, 1);
     //------------------------------------------------
 }
 
@@ -398,3 +398,13 @@ function submitContact() {
     document.getElementById("contactForm").submit()
 
 }
+
+$(document).ready(() => {
+
+  $(this).scroll(function() {
+    console.log('before')
+    $('.background').attr('url', '')
+    console.log('after')
+  });
+
+})
